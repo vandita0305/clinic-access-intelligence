@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Vandita Pathak’s healthcare analytics case study on missed appointments and review-queue coverage.">
+<title>Clinic Access Intelligence | Vandita Pathak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="data.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header class="nav wrap"><a class="signature" href="#top"><span aria-hidden="true">✳</span> Vandita Pathak</a><nav aria-label="Portfolio"><a href="#analysis">Analysis</a><a href="#audit">Model audit</a><a href="#report">Power BI</a></nav></header>
+<main id="top">
+<section class="hero wrap">
+<div class="hero-copy"><p class="overline">HEALTHCARE ANALYTICS CASE STUDY</p><h1>The empty<br>appointment <em>slot.</em></h1><p class="intro">Where do missed appointments pile up, and who gets overlooked when a clinic has limited time to follow up?</p><div class="actions"><a class="cta" href="#analysis">Explore the data <span aria-hidden="true">↘</span></a><a class="ghost" href="#report">See Power BI report <span aria-hidden="true">→</span></a></div></div>
+<div class="hero-card"><div class="card-top"><span>Clinic Access Intelligence</span><span>01 / 05</span></div><div class="card-main"><span class="small">MISSED APPOINTMENTS</span><div class="big" id="hero-missed"></div><span class="muted" id="hero-caption"></span></div><div class="slot-grid" id="slot-grid" aria-hidden="true"></div><div class="card-bottom"><span><i></i> Missed visits</span><span><i></i> Attended visits</span><span>Each tile ≈ 1%</span></div></div>
+</section>
+<section class="numbers"><div class="wrap number-grid"><div><strong id="appointments"></strong><span>Usable bookings</span></div><div><strong id="rate"></strong><span>No-show rate</span></div><div><strong>5 pages</strong><span>Native Power BI report</span></div><div><strong>11 measures</strong><span>Documented DAX metrics</span></div></div></section>
+<section class="section wrap" id="analysis"><div class="section-title"><div><p class="overline">SCHEDULING ANALYSIS</p><h2>Where do misses<br>pile up?</h2></div><p>Compare the likelihood of a no-show with the actual number of missed visits. The two measures point to different booking groups.</p></div>
+<div class="viz"><div class="viz-top"><h3>Missed visits by booking lead time</h3><div class="switch" role="group" aria-label="Chart metric"><button id="show-count" aria-pressed="true">Count</button><button id="show-rate" aria-pressed="false">Rate</button></div></div><div id="lead-chart" aria-live="polite"></div><p class="viz-note" id="lead-note"></p></div>
+</section>
+<section class="audit-section" id="audit"><div class="section wrap"><div class="section-title"><div><p class="overline">JUNE HOLDOUT / OUTREACH AUDIT</p><h2>Who gets<br>overlooked?</h2></div><p>Replay a limited review queue on 26,450 held-out appointments. Compare logistic regression with a baseline that ranks bookings by historical no-show rates for each lead-time band.</p></div>
+<div class="viz"><div class="viz-top"><h3>Actual no-shows flagged</h3><label for="budget">Review budget <select id="budget" aria-label="Share of bookings reviewed"></select></label></div><div id="audit-head" class="audit-head" aria-live="polite"></div><div id="audit-table"></div><p id="audit-note" class="viz-note"></p></div>
+</div></section>
+<section class="section wrap" id="report"><div class="section-title"><div><p class="overline">POWER BI REPORT</p><h2>Inside the dashboard.</h2></div><p>Five pages from executive overview to cohort analysis and model validation, with a dimensional model behind the visuals.</p></div>
+<div class="report-frame"><div class="report-tabs" role="group" aria-label="Report preview pages"><button id="tab-overview" aria-pressed="true">Overview</button><button id="tab-audit" aria-pressed="false">Outreach audit</button></div><img id="report-img" src="overview.png" alt="Visual preview of the Power BI overview page" loading="lazy"><div class="report-caption">Visual preview using calculated report data. The native project includes Overview, Scheduling, Cohorts, Outreach Audit and Methods.</div></div>
+<div class="actions download"><a class="cta" href="Clinic_Access_Intelligence_PowerBI.zip" download>Download Power BI project <span aria-hidden="true">↓</span></a><span>Editable Power BI project, SQL, Python, and documentation</span></div>
+</section>
+<section class="method wrap" id="methods"><p class="overline">RESEARCH NOTES</p><h2>How the work was done</h2><div class="method-grid"><article><h3>01 / Prepare</h3><p>Cleaned appointment data and excluded six invalid records. Used SQL to create daily counts by lead-time and demographic group.</p></article><article><h3>02 / Analyse</h3><p>Built a Power Query import and four one-to-many dimension relationships. Added DAX measures for booking volume, no-show rates and cohort comparisons.</p></article><article><h3>03 / Validate</h3><p>Trained on April–May appointments and tested on 1–8 June. Reviewed missed-visit detection at a fixed budget, then checked subgroup coverage.</p></article></div><p class="source">Retrospective analysis of one appointment dataset. Associations do not establish causes, and the audit measures ranking performance rather than the effect of outreach. <a href="https://www.kaggle.com/datasets/joniarroba/noshowappointments">Appointment source ↗</a></p></section>
+</main>
+<footer class="footer wrap"><strong>Vandita Pathak</strong><span>Clinic Access Intelligence</span><a href="#top">Back to top ↑</a></footer>
+</body></html>
